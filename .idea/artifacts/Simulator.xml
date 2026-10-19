@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Simulator">
+    <output-path>$PROJECT_DIR$/out/artifacts/Simulator</output-path>
+    <root id="archive" name="Simulator.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="dir-copy" path="$PROJECT_DIR$/src/simulator" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/Main.java" />
+    </root>
+  </artifact>
+</component>
