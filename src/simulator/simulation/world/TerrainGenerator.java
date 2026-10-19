@@ -34,27 +34,27 @@ final class TerrainGenerator {
         return lerp(top, bottom, ty);
     }
 
-    private static String generateBiome(double temperature,double humidity) {
+    private static Biome generateBiome(double temperature,double humidity) {
         boolean cold = temperature < 8.0;
         boolean hot = temperature >= 20.0;
         boolean dry = humidity < 30.0;
         boolean humid = humidity >= 70.0;
 
         if (cold) {
-            if (dry) return "tundra";
-            if (humid) return "snowy forest";
-            return "snowy plain";
+            if (dry) return Biomes.TUNDRA.getBiome();
+            if (humid) return Biomes.SNOWY_FOREST.getBiome();
+            return Biomes.SNOWY_PLAIN.getBiome();
         }
 
         if (hot) {
-            if (dry) return "desert";
-            if (humid) return "mangrove";
-            return "savanna";
+            if (dry) return Biomes.DESERT.getBiome();
+            if (humid) return Biomes.JUNGLE.getBiome();
+            return Biomes.SAVANNA.getBiome();
         }
 
-        if (dry) return "steppe";
-        if (humid) return "forest";
-        return "plain";
+        if (dry) return Biomes.STEPPE.getBiome();
+        if (humid) return Biomes.FOREST.getBiome();
+        return Biomes.PLAIN.getBiome();
     }
 
     private double valueAt(int x, int y, long channel) {
